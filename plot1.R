@@ -1,6 +1,6 @@
 dat <- read.table('household_power_consumption.txt', sep=";", header=T, stringsAsFactors = F)
 temp1 <- subset(dat, Date = "01/02/2007")
-View(temp1)
+
 Time <- strptime(paste(unlist(dat['Date']), unlist(dat['Time'])), format = "%d/%m/%Y %H:%M:%S")
 dat <- dat[,c(-1, -2)] # Remove date and time from the original table
 dat <- cbind(Time, dat) # Add combined date+time to data
